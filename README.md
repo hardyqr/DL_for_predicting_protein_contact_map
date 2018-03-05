@@ -6,4 +6,6 @@ This is a simple PyTorch reproduction of the dataflow of Neural Network mentione
 The network consists of Network1 (1-D residual network) + Network2 (2-D residual network). It is a mapping from a random sized 1-D sequence (L x 26) to a 2-D matrix (L x L x 1).
 
 
-As the printed log suggested below, the network can handle different size of sequence as input. Its ouput size depends on input size.
+As the printed log suggested below, the network can handle different sizes of sequence as input. Its ouput size depends on input size.
+
+![sample](https://github.com/hardyqr/DL_for_predicting_protecin_contact_map/blob/master/sample.png)
