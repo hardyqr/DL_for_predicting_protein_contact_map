@@ -132,10 +132,10 @@ if __name__ == "__main__":
         input:
             batch_size - random: 5 - 10
             channel_size - 26 (fixed)
-            sequence_size - random: 100 - 200
+            sequence_size - random: 150 - 200
         """
         print('---------- batch ' + str(_+1) + ' ----------')
-        input = np.random.random((np.random.randint(2,5),26,np.random.randint(120,200)))
+        input = np.random.random((np.random.randint(5,11),26,np.random.randint(150,200)))
         #print(input.shape)
         x = Variable(torch.FloatTensor(input))
         out = model(x)
