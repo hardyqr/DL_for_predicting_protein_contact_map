@@ -38,3 +38,5 @@ Advantages:
 - Prevents vanishing-gradient: all layers have direct access to the gradients of the loss
 
 In experiment, the paper only used one channel. But according to formula `sij=((i*w+j) mod 10)+1`, if `w=1`,`j=1`, then at all times there is `sij = (i+1) mod 10 + 1`, the receptive field of filter would grow much slower. The maximum receptive field won't be reached until 8th layer. And it (area of receptive field) goes back and forth. Within one layer, since there is only one channel, there can only be one kind of dilated convolution. This leads to less variation of receptive fields within one layer (Isn't this making some of the claimed mixed-scale advantages invalid?). This results the network to be kind of similar to DenseNet but using periodic dilations. So, *reduction of parameters* might have mainly benefited from the Dense block mechanism.
+
+And from another perspective, if all layers are densely connected, how much difference there is to have only different dilations in different layers comparing to mixed dilations within one layer?
