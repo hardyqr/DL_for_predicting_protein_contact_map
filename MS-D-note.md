@@ -22,6 +22,7 @@ advantage:
 
 - network learns a combination of dilations to perform well in different problems with different conditions. Analogical to the idea of parallely using different kernel sizes in a inception block in GoogLeNet. The network learns to use the better kernel size in a specific layer with inception blocks.
 
+![inception block](https://github.com/hardyqr/DL_for_predicting_protein_contact_map/blob/master/inception.png)
 ### Dense connections
 
 with mixed-scale dilation convolution, we don't use downsampling or upsampling, which means all feature maps have identical sizes (length and width). => can use all previous layers for the new layer.
