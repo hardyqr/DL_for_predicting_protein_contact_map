@@ -23,7 +23,7 @@ advantage:
 ![inception block](https://github.com/hardyqr/DL_for_predicting_protein_contact_map/blob/master/inception.png)
 ### Dense connections
 
-Idea of densenet: with mixed-scale dilated convolution, we don't use downsampling or upsampling, which means all feature maps have identical sizes (length and width). => can use all previous layers for the new layer (add as more inter-layer connection as possible).
+Idea of densenet: with mixed-scale dilated convolution, we don't use downsampling or upsampling, which means all feature maps have identical sizes (length and width) => can use all previous layers for the new layer (add as more inter-layer connection as possible, if L layers in total, there would be L×(L+1)/2 connections).
 
 By formula (4), every new layer is obtained by summing convolutions over all previous layers (feature maps).
 
@@ -33,4 +33,4 @@ advantage:
 	- kind of like ResNet, feature maps can be either used or not used, depending on which yields a better result. So, the network would have at least the performance of not having all previous feature maps.
 	- prevents vanishing-gradient: all layers have direct access to the gradients of the loss.
 
-In experiment, only used one channel. But according to formula sij=((iw+j) mod 10)+1, if w=1,j=1 all the time => sij = (i+1) mod 10 + 1, the receptive field of filter would grow much slower and the max receptive field won't be reached until 8th layer. And it goes back and forth. Within one layer, since there is only one channel, there can only be one kind of dilated convolution. This leads to less variation of receptive fields within one layer. Isn't this making some of the claimed advantages invalid? This would be kind of similar to densenet but using periodic dilations.
+In experiment, only used one channel. But according to formula sij=((iw+j) mod 10)+1, if w=1,j=1 all the time => sij = (i+1) mod 10 + 1, the receptive field of filter would grow much slower and the max receptive field won't be reached until 8th layer. And it goes back and forth. Within one layer, since there is only one channel, there can only be one kind of dilated convolution. This leads to less variation of receptive fields within one layer. Isn't this making some of the claimed mixed-scale advantages invalid? This would be kind of similar to densenet but using periodic dilations. So, *reduction of parameters* might have mainly benefited from the densenet mechanism.
