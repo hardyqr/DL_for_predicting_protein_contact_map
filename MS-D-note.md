@@ -1,9 +1,9 @@
 
 
 ## Mixed-Scale Dense NN (MS-D)
-A very deep network with few channels in each layer. 
+A *very deep* network with *few channels* in each layer. 
 
-Mixed-scale dilated convolution + Dense connection
+Key idea: Mixed-scale dilated convolution + Dense connection
 
 ### Mixed-scale dilated convolution 
 
